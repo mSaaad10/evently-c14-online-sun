@@ -35,11 +35,14 @@ class _SignInState extends State<SignIn> {
                       height: 24.h,
                     ),
                     const CustomTextFormField(
-                        label: "Email", prefixIcon: Icons.email_rounded),
+                        keyboardType: TextInputType.emailAddress,
+                        label: "Email",
+                        prefixIcon: Icons.email_rounded),
                     SizedBox(
                       height: 16.h,
                     ),
                     CustomTextFormField(
+                      keyboardType: TextInputType.visiblePassword,
                       isSecure: secure,
                       label: "Password",
                       prefixIcon: Icons.lock,
