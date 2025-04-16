@@ -7,6 +7,12 @@ class ThemeManager {
   static final ThemeData light = ThemeData(
       useMaterial3: false,
       primaryColor: ColorsManager.blue,
+      colorScheme: ColorScheme.fromSeed(
+          seedColor: ColorsManager.blue,
+          primary: ColorsManager.blue,
+          secondary: ColorsManager.white,
+          onSecondary: ColorsManager.blue,
+          secondaryContainer: ColorsManager.white),
       appBarTheme: AppBarTheme(
           centerTitle: true,
           backgroundColor: ColorsManager.light,
@@ -16,6 +22,7 @@ class ThemeManager {
               color: ColorsManager.black10,
               fontWeight: FontWeight.normal),
           iconTheme: const IconThemeData(color: ColorsManager.black)),
+      iconTheme: const IconThemeData(color: ColorsManager.white),
       scaffoldBackgroundColor: ColorsManager.light,
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: ColorsManager.blue,
@@ -83,13 +90,18 @@ class ThemeManager {
                   fontWeight: FontWeight.w500,
                   color: ColorsManager.white))),
       textTheme: TextTheme(
-          bodySmall: GoogleFonts.inter(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w500,
-              color: ColorsManager.black1C),
-          titleMedium: GoogleFonts.inter(
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w500,
-              color: ColorsManager.blue)));
+        bodySmall: GoogleFonts.inter(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500,
+            color: ColorsManager.black1C),
+        titleSmall: GoogleFonts.inter(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.normal,
+            color: ColorsManager.white),
+        titleMedium: GoogleFonts.inter(
+            fontSize: 24.sp,
+            fontWeight: FontWeight.w600,
+            color: ColorsManager.white),
+      ));
   static final ThemeData dark = ThemeData();
 }

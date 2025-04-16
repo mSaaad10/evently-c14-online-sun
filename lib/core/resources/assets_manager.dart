@@ -17,4 +17,5 @@ class SvgAssets {
       "$base/unselected_favourite_icon.svg";
   static const String unselectedProfileIcon =
       "$base/unselected_profile_icon.svg";
+  static const String sports = "$base/sports.svg";
 }
