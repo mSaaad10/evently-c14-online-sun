@@ -1,4 +1,5 @@
 import 'package:evently_c14_online_sun/core/resources/assets_manager.dart';
+import 'package:evently_c14_online_sun/core/routes_manager/routes_manager.dart';
 import 'package:evently_c14_online_sun/main_layout/tabs/favourite/favourite.dart';
 import 'package:evently_c14_online_sun/main_layout/tabs/home/home.dart';
 import 'package:evently_c14_online_sun/main_layout/tabs/map/maps.dart';
@@ -27,9 +28,13 @@ class _MainLayoutState extends State<MainLayout> {
     );
   }
 
+  void _goToCreateEvent() {
+    Navigator.pushNamed(context, RoutesManager.createEvent);
+  }
+
   Widget buildFab() {
     return FloatingActionButton(
-      onPressed: () {},
+      onPressed: _goToCreateEvent,
       child: const Icon(Icons.add),
     );
   }

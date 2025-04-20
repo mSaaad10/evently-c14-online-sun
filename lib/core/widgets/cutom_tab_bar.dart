@@ -1,4 +1,3 @@
-import 'package:evently_c14_online_sun/core/resources/constant_manager.dart';
 import 'package:evently_c14_online_sun/core/widgets/custom_tab.dart';
 import 'package:evently_c14_online_sun/data/data_model/categoryDM.dart';
 import 'package:flutter/material.dart';
@@ -9,11 +8,13 @@ class CustomTabBar extends StatefulWidget {
       {super.key,
       required this.categories,
       required this.selectedTabBg,
+      required this.unselectedTabBg,
       required this.selectedLabelColor,
       required this.unSelectedLabelColor});
 
   final List<CategoryDM> categories;
   final Color selectedTabBg;
+  final Color unselectedTabBg;
   final Color selectedLabelColor;
   final Color unSelectedLabelColor;
 
@@ -37,12 +38,12 @@ class _CustomTabBarState extends State<CustomTabBar> {
               .map(
                 (category) => CustomTab(
                   selectedTabBg: widget.selectedTabBg,
+                  unselectedTabBg: widget.unselectedTabBg,
                   selectedLabelColor: widget.selectedLabelColor,
                   unSelectedLabelColor: widget.unSelectedLabelColor,
                   category: category,
                   isSelected:
-                      ConstantManager.categoriesWithAll.indexOf(category) ==
-                          selectedTabIndex,
+                      widget.categories.indexOf(category) == selectedTabIndex,
                 ),
               )
               .toList()),
@@ -50,6 +51,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
   }
 
   void _onTabItemClicked(int newTabIndex) {
+    print(newTabIndex);
     setState(() {
       selectedTabIndex = newTabIndex;
     });

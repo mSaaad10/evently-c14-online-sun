@@ -16,18 +16,18 @@ class ThemeManager {
       appBarTheme: AppBarTheme(
           centerTitle: true,
           backgroundColor: ColorsManager.light,
-          foregroundColor: ColorsManager.black10,
+          foregroundColor: ColorsManager.blue,
           titleTextStyle: GoogleFonts.roboto(
-              fontSize: 22.sp,
-              color: ColorsManager.black10,
+              fontSize: 18.sp,
+              color: ColorsManager.blue,
               fontWeight: FontWeight.normal),
-          iconTheme: const IconThemeData(color: ColorsManager.black)),
+          iconTheme: const IconThemeData(color: ColorsManager.blue)),
       cardColor: ColorsManager.light,
       cardTheme: CardTheme(
           shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.r),
       )),
-      iconTheme: const IconThemeData(color: ColorsManager.white),
+      iconTheme: const IconThemeData(color: ColorsManager.black1C),
       scaffoldBackgroundColor: ColorsManager.light,
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: ColorsManager.blue,
@@ -49,6 +49,11 @@ class ThemeManager {
         prefixIconColor: ColorsManager.grey,
         labelStyle: GoogleFonts.inter(
           fontSize: 16.sp,
+          color: ColorsManager.grey,
+          fontWeight: FontWeight.w500,
+        ),
+        hintStyle: GoogleFonts.inter(
+          fontSize: 14.sp,
           color: ColorsManager.grey,
           fontWeight: FontWeight.w500,
         ),

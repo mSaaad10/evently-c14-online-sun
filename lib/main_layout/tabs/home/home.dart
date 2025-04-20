@@ -56,8 +56,9 @@ class _HomeState extends State<Home> {
                 ],
               ),
               CustomTabBar(
-                  categories: ConstantManager.categoriesWithAll,
+                  categories: ConstantManager.categories,
                   selectedTabBg: Theme.of(context).colorScheme.secondary,
+                  unselectedTabBg: Colors.transparent,
                   selectedLabelColor: Theme.of(context).colorScheme.onSecondary,
                   unSelectedLabelColor:
                       Theme.of(context).colorScheme.secondaryContainer)

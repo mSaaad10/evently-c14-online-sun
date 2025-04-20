@@ -10,12 +10,14 @@ class CustomTab extends StatelessWidget {
       required this.category,
       required this.isSelected,
       required this.selectedTabBg,
+      required this.unselectedTabBg,
       required this.selectedLabelColor,
       required this.unSelectedLabelColor});
 
   final CategoryDM category;
   final bool isSelected;
   final Color selectedTabBg;
+  final Color unselectedTabBg;
   final Color selectedLabelColor;
   final Color unSelectedLabelColor;
 
@@ -24,7 +26,7 @@ class CustomTab extends StatelessWidget {
     return Container(
       padding: REdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-          color: isSelected ? selectedTabBg : Colors.transparent,
+          color: isSelected ? selectedTabBg : unselectedTabBg,
           borderRadius: BorderRadius.circular(42.r),
           border: Border.all(color: selectedTabBg, width: 1.w)),
       child: Row(
