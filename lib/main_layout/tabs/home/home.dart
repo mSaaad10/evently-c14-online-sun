@@ -1,5 +1,8 @@
+import 'package:evently_c14_online_sun/core/resources/assets_manager.dart';
 import 'package:evently_c14_online_sun/core/resources/constant_manager.dart';
+import 'package:evently_c14_online_sun/core/widgets/custom_event_widget.dart';
 import 'package:evently_c14_online_sun/core/widgets/cutom_tab_bar.dart';
+import 'package:evently_c14_online_sun/data/data_model/event_DM.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -61,6 +64,19 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
+        Expanded(
+            child: ListView.builder(
+          itemBuilder: (context, index) => CustomEventWidget(
+            event: EventDM(
+                title: "Meeting for Updating The Development Method ",
+                description: "Meeting for Updating The Development Method ",
+                category: "Meeting",
+                imagePath: ImageAssets.meeting,
+                date: DateTime.now(),
+                time: TimeOfDay.now()),
+          ),
+          itemCount: 20,
+        ))
       ],
     );
   }

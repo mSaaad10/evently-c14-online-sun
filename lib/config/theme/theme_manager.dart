@@ -22,6 +22,11 @@ class ThemeManager {
               color: ColorsManager.black10,
               fontWeight: FontWeight.normal),
           iconTheme: const IconThemeData(color: ColorsManager.black)),
+      cardColor: ColorsManager.light,
+      cardTheme: CardTheme(
+          shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.r),
+      )),
       iconTheme: const IconThemeData(color: ColorsManager.white),
       scaffoldBackgroundColor: ColorsManager.light,
       floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -102,6 +107,14 @@ class ThemeManager {
             fontSize: 24.sp,
             fontWeight: FontWeight.w600,
             color: ColorsManager.white),
+        labelMedium: GoogleFonts.inter(
+            fontSize: 20.sp,
+            fontWeight: FontWeight.bold,
+            color: ColorsManager.blue),
+        labelSmall: GoogleFonts.inter(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.bold,
+            color: ColorsManager.blue),
       ));
   static final ThemeData dark = ThemeData();
 }

@@ -1,4 +1,5 @@
 import 'package:evently_c14_online_sun/config/theme/theme_manager.dart';
+import 'package:evently_c14_online_sun/core/extensions/context_extension.dart';
 import 'package:evently_c14_online_sun/core/routes_manager/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +10,7 @@ class EventlyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(393, 841),
+      designSize: Size(MediaQuery.of(context).size.width, context.screenHeight),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
