@@ -112,6 +112,22 @@ class ThemeManager {
             fontSize: 24.sp,
             fontWeight: FontWeight.w600,
             color: ColorsManager.white),
+        headlineSmall: GoogleFonts.inter(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: ColorsManager.white),
+        headlineMedium: GoogleFonts.inter(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.bold,
+            color: ColorsManager.white),
+        displayMedium: GoogleFonts.inter(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.bold,
+            color: ColorsManager.black1C),
+        displaySmall: GoogleFonts.inter(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: ColorsManager.blue),
         labelMedium: GoogleFonts.inter(
             fontSize: 20.sp,
             fontWeight: FontWeight.bold,
