@@ -3,6 +3,7 @@ import 'package:evently_c14_online_sun/core/resources/colors_manager.dart';
 import 'package:evently_c14_online_sun/core/widgets/custom_drop_down_menu.dart';
 import 'package:evently_c14_online_sun/core/widgets/custom_profile_header_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Profile extends StatefulWidget {
@@ -32,7 +33,7 @@ class _ProfileState extends State<Profile> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 CustomDropDownMenu(
-                  label: "Language",
+                  label: AppLocalizations.of(context)!.language,
                   labelView: selectedLang,
                   items: ["English", "عربي"],
                   onChange: _onLanguageChange,
@@ -41,12 +42,15 @@ class _ProfileState extends State<Profile> {
                   height: 16.h,
                 ),
                 CustomDropDownMenu(
-                  label: "Theme",
+                  label: AppLocalizations.of(context)!.theme,
                   labelView: selectedTheme,
-                  items: ["Light", "Dark"],
+                  items: [
+                    AppLocalizations.of(context)!.light,
+                    AppLocalizations.of(context)!.dark,
+                  ],
                   onChange: _onThemeChange,
                 ),
-                Spacer(
+                const Spacer(
                   flex: 4,
                 ),
                 ElevatedButton(
@@ -60,7 +64,9 @@ class _ProfileState extends State<Profile> {
                         SizedBox(
                           width: 8.w,
                         ),
-                        Text("Logout")
+                        Text(
+                          AppLocalizations.of(context)!.logout,
+                        )
                       ],
                     )),
                 Spacer(),

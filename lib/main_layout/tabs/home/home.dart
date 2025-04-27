@@ -4,6 +4,7 @@ import 'package:evently_c14_online_sun/core/widgets/custom_event_widget.dart';
 import 'package:evently_c14_online_sun/core/widgets/cutom_tab_bar.dart';
 import 'package:evently_c14_online_sun/data/data_model/event_DM.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home extends StatefulWidget {
@@ -25,7 +26,7 @@ class _HomeState extends State<Home> {
             horizontal: 16,
           ),
           decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).primaryColor,
               borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(16.r))),
           child: Column(
@@ -33,7 +34,7 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Welcome Back ✨",
+                AppLocalizations.of(context)!.welcome_back,
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
@@ -82,3 +83,5 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+/// i18n

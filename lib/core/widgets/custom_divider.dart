@@ -15,11 +15,10 @@ class CustomDivider extends StatelessWidget {
           child: Container(
             margin: REdgeInsets.symmetric(horizontal: 16),
             height: 1.h,
-            color: Theme.of(context).primaryColor,
-          ),
+            color: ColorsManager.blue),
         ),
         Text(
-          "Or",
+          title,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: ColorsManager.blue,
               ),
@@ -28,8 +27,7 @@ class CustomDivider extends StatelessWidget {
           child: Container(
             margin: REdgeInsets.symmetric(horizontal: 16),
             height: 1.h,
-            color: Theme.of(context).primaryColor,
-          ),
+              color: ColorsManager.blue),
         ),
       ],
     );
