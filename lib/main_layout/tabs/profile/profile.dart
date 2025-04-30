@@ -2,9 +2,11 @@ import 'package:evently_c14_online_sun/core/resources/assets_manager.dart';
 import 'package:evently_c14_online_sun/core/resources/colors_manager.dart';
 import 'package:evently_c14_online_sun/core/widgets/custom_drop_down_menu.dart';
 import 'package:evently_c14_online_sun/core/widgets/custom_profile_header_widget.dart';
+import 'package:evently_c14_online_sun/providers/config_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -14,12 +16,11 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  String selectedLang = "English";
-
-  String selectedTheme = "Light";
+  late ConfigProvider configProvider;
 
   @override
   Widget build(BuildContext context) {
+    configProvider = Provider.of<ConfigProvider>(context);
     return Column(
       children: [
         const CustomProfileHeaderWidget(
@@ -34,7 +35,7 @@ class _ProfileState extends State<Profile> {
               children: [
                 CustomDropDownMenu(
                   label: AppLocalizations.of(context)!.language,
-                  labelView: selectedLang,
+                  labelView: configProvider.isEnglish ? "English" : "عربي",
                   items: ["English", "عربي"],
                   onChange: _onLanguageChange,
                 ),
@@ -43,7 +44,9 @@ class _ProfileState extends State<Profile> {
                 ),
                 CustomDropDownMenu(
                   label: AppLocalizations.of(context)!.theme,
-                  labelView: selectedTheme,
+                  labelView: configProvider.isDark
+                      ? AppLocalizations.of(context)!.dark
+                      : AppLocalizations.of(context)!.light,
                   items: [
                     AppLocalizations.of(context)!.light,
                     AppLocalizations.of(context)!.dark,
@@ -79,14 +82,14 @@ class _ProfileState extends State<Profile> {
   }
 
   void _onLanguageChange(String? newLanguage) {
-    setState(() {
-      selectedLang = newLanguage ?? selectedLang;
-    });
+    String lang = newLanguage == "English" ? "en" : "ar";
+    configProvider.changAppLang(lang);
   }
 
   void _onThemeChange(String? newTheme) {
-    setState(() {
-      selectedTheme = newTheme ?? selectedTheme;
-    });
+    ThemeMode theme = newTheme == AppLocalizations.of(context)!.light
+        ? ThemeMode.light
+        : ThemeMode.dark;
+    configProvider.changeAppTheme(theme);
   }
 }
