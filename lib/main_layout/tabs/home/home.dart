@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
           decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,
               borderRadius:
-                  BorderRadius.vertical(bottom: Radius.circular(16.r))),
+                  BorderRadius.vertical(bottom: Radius.circular(17.r))),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
