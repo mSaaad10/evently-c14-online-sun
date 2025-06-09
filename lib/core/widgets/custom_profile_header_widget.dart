@@ -16,32 +16,39 @@ class CustomProfileHeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
+
       decoration: BoxDecoration(
           color: ColorsManager.blue,
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(36.r))),
       child: Padding(
+        
         padding: REdgeInsets.all(16),
-        child: Row(
-          children: [
-            Image.asset(userImage),
-            Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    userName,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                  SizedBox(
-                    height: 4.h,
-                  ),
-                  Text(
-                    userAccount,
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                ],
-              ),
-            )
-          ],
+        child: SafeArea(
+          child: Row(
+          
+            children: [
+              SizedBox(height: 24.h,),
+              Image.asset(userImage),
+              Expanded(
+                child: Column(
+                  children: [
+                    Text(
+                      userName,
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Text(
+                      userAccount,
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

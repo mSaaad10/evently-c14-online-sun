@@ -1,3 +1,4 @@
+import 'package:evently_c14_online_sun/core/resources/assets_manager.dart';
 import 'package:evently_c14_online_sun/core/resources/colors_manager.dart';
 import 'package:evently_c14_online_sun/core/widgets/event_date_widget.dart';
 import 'package:evently_c14_online_sun/core/widgets/event_title_widget.dart';
@@ -20,13 +21,13 @@ class CustomEventWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(width: 1.w, color: ColorsManager.blue),
         image: DecorationImage(
-            fit: BoxFit.fill, image: AssetImage(event.imagePath)),
+            fit: BoxFit.fill, image: AssetImage(ImageAssets.base)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           EventDateWidget(
-            date: event.date,
+            date: event.dateTime,
           ),
           const Spacer(),
           EventTitleWidget(

@@ -10,6 +10,7 @@ class CustomTextFormField extends StatelessWidget {
       this.suffixIcon,
       this.isSecure = false,
       this.onPress,
+        this.controller,
       this.keyboardType = TextInputType.text,
       this.hint,
       this.maxLines = 1});
@@ -20,12 +21,14 @@ class CustomTextFormField extends StatelessWidget {
   final bool isSecure;
   final VoidCallback? onPress;
   final TextInputType keyboardType;
+  final TextEditingController? controller;
   final String? hint;
   final int maxLines;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller:controller,
       maxLines: maxLines,
       style: GoogleFonts.inter(
           fontSize: 16,

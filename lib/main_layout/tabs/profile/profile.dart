@@ -22,8 +22,11 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     configProvider = Provider.of<ConfigProvider>(context);
     return Column(
+
       children: [
         const CustomProfileHeaderWidget(
+            
+
             userName: "Muhammed Saad",
             userAccount: " mSaad@gmail.com",
             userImage: ImageAssets.profileImage),
@@ -63,6 +66,7 @@ class _ProfileState extends State<Profile> {
                     onPressed: () {},
                     child: Row(
                       children: [
+
                         Icon(Icons.logout),
                         SizedBox(
                           width: 8.w,
